@@ -1,0 +1,182 @@
+---
+const successStories = [
+  {
+    id: 1,
+    title: "Aisha's New Beginning",
+    image: "https://source.unsplash.com/400x300/?woman,success",
+    link: "/success-stories",
+  },
+  {
+    id: 2,
+    title: "Zara's Business Growth",
+    image: "https://source.unsplash.com/400x300/?business,woman",
+    link: "/success-stories",
+  },
+  {
+    id: 3,
+    title: "Farah's Financial Freedom",
+    image: "https://source.unsplash.com/400x300/?woman,happy",
+    link: "/success-stories",
+  },
+  {
+    id: 4,
+    title: "Sana's Education Journey",
+    image: "https://source.unsplash.com/400x300/?study,success",
+    link: "/success-stories",
+  },
+  {
+    id: 5,
+    title: "Rabia's Career Shift",
+    image: "https://source.unsplash.com/400x300/?office,woman",
+    link: "/success-stories",
+  },
+];
+---
+
+<style>
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+.story-card {
+  flex: none;
+  width: 18rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.left-btn {
+  left: -20px;
+}
+
+.right-btn {
+  right: -20px;
+}
+</style>
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-poppins font-bold text-center mb-12">
+      Success Stories
+    </h2>
+
+    <!-- Featured Story -->
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto mb-12">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <img
+          src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
+          alt="Success Story"
+          class="w-64 h-64 rounded-full object-cover"
+        />
+        <div>
+          <h3 class="font-poppins font-bold text-xl md:text-2xl mb-4">
+            Fatima's Journey to Success
+          </h3>
+          <p class="text-gray-600 mb-4">
+            "Thanks to Zariya e Muash's vocational training program, I learned tailoring skills and now run my own successful business. This has transformed my life and helped me support my family."
+          </p>
+          <a href="/success-stories" class="text-primary hover:text-primary-dark">
+            Read More Stories →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable Stories -->
+    <div id="scroll-container" class="relative">
+      <button id="left-btn" class="scroll-btn left-btn">
+        ◀
+      </button>
+
+      <div class="scroll-container flex space-x-6 pb-6">
+        {successStories.map((story) => (
+          <div class="story-card">
+            <img src={story.image} alt={story.title} class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h4 class="font-poppins font-bold mb-2">{story.title}</h4>
+              <a href={story.link} class="text-primary hover:text-primary-dark text-sm">
+                Read More →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button id="right-btn" class="scroll-btn right-btn">
+        ▶
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollContainer = document.querySelector(".scroll-container");
+  const leftBtn = document.getElementById("left-btn");
+  const rightBtn = document.getElementById("right-btn");
+
+  let isHovered = false;
+
+  function startAutoScroll() {
+    if (!isHovered) {
+      scrollContainer.scrollBy({ left: 200, behavior: "smooth" });
+    }
+  }
+
+  function stopAutoScroll() {
+    isHovered = true;
+  }
+
+  function resumeAutoScroll() {
+    isHovered = false;
+  }
+
+  leftBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: -250, behavior: "smooth" });
+  });
+
+  rightBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: 250, behavior: "smooth" });
+  });
+
+  scrollContainer.addEventListener("mouseenter", stopAutoScroll);
+  scrollContainer.addEventListener("mouseleave", resumeAutoScroll);
+
+  setInterval(startAutoScroll, 3000);
+});
+</script>

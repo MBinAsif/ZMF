@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import SuccessStories from "../components/SuccessStories.astro";
+
+const partners = [
+  "/crescentcollege.png",
+  "/bizconglobal_logo.jpg",
+  "/images.jpg",
+  "/Untitled design.png",
+  "/images (1).jpg",
+  "/logo6.png",
+];
+
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative h-[600px] md:h-[700px] flex items-center">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/hero.jpg"
+        alt="Hero Image"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="container mx-auto px-4 relative text-white text-center md:text-left">
+      <h1 class="font-poppins text-4xl md:text-5xl font-bold mb-6">
+        Empowering Lives,<br />Building Futures
+      </h1>
+      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto md:mx-0">
+        Providing sustainable sources of income to underprivileged communities in Pakistan
+      </p>
+      <div class="space-x-4 space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-center md:justify-start">
+        <a href="/donate" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition w-full md:w-auto text-center">
+          Donate Now
+        </a>
+        <a href="/get-involved" class="bg-white text-primary px-6 py-3 rounded-full hover:bg-gray-100 transition w-full md:w-auto text-center">
+          Join Our Mission
+        </a>
+        <a href="/programs" class="bg-primary-light text-white px-6 py-3 rounded-full hover:bg-primary transition w-full md:w-auto text-center">
+          Explore Programs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievement Ticker -->
+  <div class="bg-primary text-white py-3 overflow-hidden">
+    <div class="animate-marquee whitespace-nowrap">
+      <span class="mx-4">🎯 10,000+ Lives Transformed</span>
+      <span class="mx-4">|</span>
+      <span class="mx-4">🏘️ 50+ Communities Supported</span>
+      <span class="mx-4">|</span>
+      <span class="mx-4">💪 5,000+ Women Trained</span>
+      <span class="mx-4">|</span>
+      <span class="mx-4">🌱 20,000+ Jobs Created</span>
+    </div>
+  </div>
+
+  <!-- Introduction Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-poppins font-bold mb-6">Our Mission</h2>
+          <p class="text-gray-600 mb-8">
+            At Zariya e Muash, we believe in empowering individuals through sustainable economic opportunities. Our mission is to break the cycle of poverty by providing skills training, financial support, and resources to underprivileged communities across Pakistan.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center p-4 bg-secondary rounded-lg">
+              <span class="text-primary text-3xl md:text-4xl font-bold">5,000+</span>
+              <p class="text-gray-600 mt-2">Women Trained</p>
+            </div>
+            <div class="text-center p-4 bg-secondary rounded-lg">
+              <span class="text-primary text-3xl md:text-4xl font-bold">20,000+</span>
+              <p class="text-gray-600 mt-2">Jobs Created</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative aspect-video">
+          <iframe
+            class="w-full h-full rounded-lg shadow-lg"
+            src="https://www.youtube.com/embed/_h7Vkn1t3GU"
+            title="Success Story"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Programs Carousel -->
+  <section class="py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-poppins font-bold text-center mb-12">Our Programs</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            alt="Vocational Training"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white text-2xl">🎓</span>
+            </div>
+            <h3 class="font-poppins font-bold text-xl mb-2">Vocational Training</h3>
+            <p class="text-gray-600 mb-4">
+              Providing skills training in various trades to create sustainable employment opportunities.
+            </p>
+            <a href="/programs" class="text-primary hover:text-primary-dark">Learn More →</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition">
+          <img
+            src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"
+            alt="Microfinance Support"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white text-2xl">💰</span>
+            </div>
+            <h3 class="font-poppins font-bold text-xl mb-2">Microfinance Support</h3>
+            <p class="text-gray-600 mb-4">
+              Empowering entrepreneurs with small loans to start and grow their businesses.
+            </p>
+            <a href="/programs" class="text-primary hover:text-primary-dark">Learn More →</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition">
+          <img
+            src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab"
+            alt="Agricultural Development"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <span class="text-white text-2xl">🌾</span>
+            </div>
+            <h3 class="font-poppins font-bold text-xl mb-2">Agricultural Development</h3>
+            <p class="text-gray-600 mb-4">
+              Supporting farmers with modern techniques and resources for better yields.
+            </p>
+            <a href="/programs" class="text-primary hover:text-primary-dark">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <SuccessStories />
+
+  <!-- Call-to-Action Sections -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Donation Appeal -->
+        <div class="text-center">
+          <h3 class="text-2xl md:text-3xl font-poppins font-bold mb-6">Your Donation Can Change a Life</h3>
+          <div class="bg-white/10 rounded-lg p-6 mb-6">
+            <div class="mb-4">
+              <div class="h-4 bg-white/20 rounded-full">
+                <div class="h-4 bg-secondary rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+            <p class="mb-4">75% of our 2024 fundraising goal achieved</p>
+            <a href="/donate" class="bg-white text-primary px-6 py-3 rounded-full inline-block hover:bg-gray-100 transition">
+              Donate Now
+            </a>
+          </div>
+        </div>
+        <!-- Volunteer Appeal -->
+        <div class="text-center">
+          <h3 class="text-2xl md:text-3xl font-poppins font-bold mb-6">Join Our Mission</h3>
+          <p class="mb-6">
+            Make a difference by volunteering your time and skills. We have various opportunities
+            for individuals and organizations to contribute to our cause.
+          </p>
+          <a href="/get-involved" class="bg-white text-primary px-6 py-3 rounded-full inline-block hover:bg-gray-100 transition">
+            Join Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners and Donors -->
+  <section class="py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-poppins font-bold text-center mb-4">Our Partners</h2>
+      <p class="text-center text-gray-600 mb-12">Thanks to Our Supporters</p>
+      <div class="flex flex-wrap justify-center items-center gap-8">
+        {partners.map((partner, index) => (
+          <div class="w-32 h-32 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
+            <img
+              src={partner}
+              alt={`Partner ${index + 1}`}
+              class="max-w-full max-h-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter and Social Media -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white/80">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+        <!-- Latest News with Expandable Cards -->
+        <div class="relative">
+          <h3 class="text-2xl md:text-3xl font-poppins font-bold mb-10 text-gray-800 relative z-10">
+            Latest News
+            <span class="absolute -top-4 -left-2 w-12 h-12 bg-primary/10 rounded-full animate-pulse-slow"></span>
+          </h3>
+          <div class="space-y-6">
+            {[1, 2, 3].map((news) => (
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-400 ease-out">
+                <button
+                  class="w-full text-left flex items-center group focus:outline-none"
+                  onclick={`document.getElementById('news-${news}').classList.toggle('hidden')`}
+                >
+                  <img
+                    src={`https://source.unsplash.com/random/200x200?news,${news}`}
+                    alt={`News ${news}`}
+                    class="w-24 h-24 object-cover rounded-l-xl transition-transform duration-400 ease-out group-hover:scale-105"
+                  />
+                  <div class="p-5 flex-1">
+                    <h4 class="font-poppins font-bold text-gray-800 mb-1 text-lg">Latest News Title {news}</h4>
+                    <p class="text-gray-500 text-xs uppercase tracking-wide">March {news}, 2024</p>
+                  </div>
+                  <svg class="w-5 h-5 mr-4 text-primary transition-transform duration-300 ease-out group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                <div id={`news-${news}`} class="hidden px-5 pb-5 text-gray-600 text-sm transition-all duration-300 ease-out">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <a href="/news" class="text-primary hover:text-primary-dark text-sm mt-2 inline-block">Read Full Story →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Upcoming Events with Interactive Toggle -->
+        <div class="relative">
+          <h3 class="text-2xl md:text-3xl font-poppins font-bold mb-10 text-gray-800 relative z-10">
+            Upcoming Events
+            <span class="absolute -top-4 -right-2 w-12 h-12 bg-primary/10 rounded-full animate-pulse-slow"></span>
+          </h3>
+          <div class="space-y-8 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-0.5 before:bg-primary/20 before:z-0">
+            {[1, 2, 3].map((event) => (
+              <div class="relative flex items-start gap-6 transition-all duration-400 ease-out">
+                <div class="bg-primary text-white p-3 rounded-full text-center w-16 h-16 flex-shrink-0 z-10 transition-transform duration-400 ease-out hover:scale-110">
+                  <div class="text-xl font-bold">{event}5</div>
+                  <div class="text-xs uppercase">Mar</div>
+                </div>
+                <div class="bg-white rounded-r-xl shadow-md p-5 w-full">
+                  <button
+                    class="w-full text-left flex justify-between items-center focus:outline-none"
+                    onclick={`document.getElementById('event-${event}').classList.toggle('hidden')`}
+                  >
+                    <h4 class="font-poppins font-bold text-gray-800 text-lg">Community Workshop {event}</h4>
+                    <svg class="w-5 h-5 text-primary transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div id={`event-${event}`} class="hidden mt-3 text-gray-600 text-sm transition-all duration-300 ease-out">
+                    <p class="mb-2">Islamabad Convention Center</p>
+                    <p class="mb-3">Join us for an interactive session on community building. Limited seats!</p>
+                    <a
+                      href="/events"
+                      class="bg-primary text-white px-5 py-1.5 rounded-full text-sm inline-block transition-all duration-300 ease-out hover:bg-primary-dark"
+                    >
+                      Register Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('subscribeMessage').textContent = 'Thank you for subscribing!';
+      document.getElementById('subscribeMessage').classList.add('text-green-500');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = (document.getElementById('contactName') as HTMLInputElement).value;
+      const email = (document.getElementById('contactEmail') as HTMLInputElement).value;
+      const message = (document.getElementById('contactMessage') as HTMLTextAreaElement).value;
+
+      fetch('https://your-backend-endpoint.com/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('contactResponse').textContent = 'Message sent successfully!';
+        document.getElementById('contactResponse').classList.add('text-green-500');
+      })
+      .catch(error => {
+        document.getElementById('contactResponse').textContent = 'Failed to send message. Please try again.';
+        document.getElementById('contactResponse').classList.add('text-red-500');
+      });
+    });
+  </script>
+</Layout>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Slow Pulse Animation */
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 3s infinite;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 767px) {
+    .before\:absolute {
+      display: none; /* Hide timeline on mobile */
+    }
+  }
+</style>

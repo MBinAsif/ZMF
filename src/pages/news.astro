@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="News & Updates">
+  <!-- Hero Section -->
+  <section class="relative h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c"
+        alt="News Hero"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="container mx-auto px-4 relative text-white">
+      <h1 class="font-poppins text-5xl font-bold mb-4">News & Updates</h1>
+      <p class="text-xl max-w-2xl">Stay informed about our latest initiatives and impact</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="py-8 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        {[
+          'All',
+          'Health',
+          'Education',
+          'Community',
+          'Sustainability',
+          'Events',
+          'Success Stories'
+        ].map((category) => (
+          <button
+            class="px-6 py-2 rounded-full bg-white hover:bg-primary hover:text-white transition"
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[1, 2, 3, 4, 5, 6].map((article) => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src={`https://source.unsplash.com/random/400x300?news,${article}`}
+              alt={`News ${article}`}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-primary-light text-white text-sm px-3 py-1 rounded-full">
+                  Category
+                </span>
+                <span class="text-gray-600 text-sm ml-4">March {article}, 2024</span>
+              </div>
+              <h3 class="font-poppins font-bold text-xl mb-2">
+                News Title Goes Here
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-primary hover:text-primary-dark">
+                  Read More →
+                </a>
+                <div class="flex space-x-2">
+                  <button class="text-gray-600 hover:text-primary">
+                    <span class="sr-only">Share on Facebook</span>
+                    📘
+                  </button>
+                  <button class="text-gray-600 hover:text-primary">
+                    <span class="sr-only">Share on Twitter</span>
+                    🐦
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-poppins font-bold mb-4">Stay Updated</h2>
+        <p class="mb-8">Subscribe to our newsletter for the latest news and updates</p>
+        <form class="flex gap-4">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 px-6 py-3 rounded-full text-gray-800 focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

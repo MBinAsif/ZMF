@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import myImage from './public/working women.jpg';
+---
+
+<Layout title="Our Programs">
+  <!-- Hero Section -->
+  <section class="relative h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0"
+        alt="Programs Hero"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="container mx-auto px-4 relative text-white">
+      <h1 class="font-poppins text-5xl font-bold mb-4">Our Programs</h1>
+      <p class="text-xl max-w-2xl">Empowering communities through sustainable development initiatives</p>
+    </div>
+  </section>
+
+  <!-- Programs Grid -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Education for All',
+            icon: '📚',
+            image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b',
+            description: 'Providing quality education and skills training to underprivileged youth.',
+            stats: ['1,000+ Students', '50+ Schools', '95% Success Rate']
+          },
+          {
+            title: 'Food Distribution',
+            icon: '🍽️',
+            image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c',
+            description: 'Ensuring food security for vulnerable communities across Pakistan.',
+            stats: ['100,000+ Meals', '1,000+ Families', '20+ Districts']
+          },
+          {
+            title: 'Women Empowerment',
+            icon: '👩‍🎓',
+            image: "./public/working women.jpg",
+            description: 'Supporting women through skills training and business development.',
+            stats: ['5,000+ Women', '200+ Businesses', '75% Income Increase']
+          },
+          {
+            title: 'Healthcare Support',
+            icon: '🏥',
+            image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907',
+            description: 'Providing medical care and health awareness to communities.',
+            stats: ['20,000+ Patients', '50+ Camps', '30+ Districts']
+          },
+          {
+            title: 'Environmental Projects',
+            icon: '🌿',
+            image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09',
+            description: 'Promoting sustainability and environmental conservation.',
+            stats: ['100,000+ Trees', '50+ Clean-ups', '20+ Cities']
+          },
+          {
+            title: 'Youth Development',
+            icon: '🎓',
+            image: 'https://images.unsplash.com/photo-1529390079861-591de354faf5',
+            description: 'Nurturing young talent through mentorship and training.',
+            stats: ['2,000+ Youth', '100+ Programs', '85% Employment']
+          }
+        ].map((program) => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition">
+            <img
+              src={program.image}
+              alt={program.title}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                <span class="text-white text-2xl">{program.icon}</span>
+              </div>
+              <h3 class="font-poppins font-bold text-xl mb-2">{program.title}</h3>
+              <p class="text-gray-600 mb-4">{program.description}</p>
+              <div class="space-y-2">
+                {program.stats.map((stat) => (
+                  <div class="flex items-center text-sm text-gray-600">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                    {stat}
+                  </div>
+                ))}
+              </div>
+              <a
+                href={`/programs/${program.title.toLowerCase().replace(/\s+/g, '-')}`}
+                class="mt-4 inline-block bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Statistics -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-poppins font-bold text-center mb-12">Our Impact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { number: '100,000+', label: 'Lives Impacted' },
+          { number: '50+', label: 'Districts Covered' },
+          { number: '1,000+', label: 'Volunteers' },
+          { number: '500+', label: 'Partner Organizations' }
+        ].map((stat) => (
+          <div class="text-center">
+            <div class="text-4xl font-bold mb-2">{stat.number}</div>
+            <div class="text-lg">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

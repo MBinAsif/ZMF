@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us">
+  <!-- Hero Section -->
+  <section class="relative h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c"
+        alt="About Us Hero"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="container mx-auto px-4 relative text-white">
+      <h1 class="font-poppins text-5xl font-bold mb-4">About Us</h1>
+      <p class="text-xl max-w-2xl">Building a better future for underprivileged communities in Pakistan</p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Mission -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+            <span class="text-white text-3xl">🎯</span>
+          </div>
+          <h2 class="text-3xl font-poppins font-bold mb-4">Our Mission</h2>
+          <p class="text-gray-600">
+            To empower underprivileged communities in Pakistan by providing sustainable income
+            opportunities, skills development, and resources that enable them to build better lives
+            for themselves and their families.
+          </p>
+        </div>
+        <!-- Vision -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+            <span class="text-white text-3xl">👁️</span>
+          </div>
+          <h2 class="text-3xl font-poppins font-bold mb-4">Our Vision</h2>
+          <p class="text-gray-600">
+            A Pakistan where every individual has access to economic opportunities, quality
+            education, and the resources needed to achieve their full potential and contribute to
+            society's progress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+<section class="py-20 bg-[#F5F7FA]">
+  <div class="container mx-auto px-6 lg:px-12">
+    <h2 class="text-4xl font-poppins font-bold text-center text-[#1F2937] mb-16 tracking-wide">
+      Our Journey
+    </h2>
+
+    <div class="relative">
+      <!-- Center Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#2563EB]"></div>
+
+      <div class="space-y-12">
+        {[
+          {
+            year: '2018',
+            title: 'Foundation',
+            description: 'Zariya e Muash was established with a vision to create sustainable income opportunities.'
+          },
+          {
+            year: '2019',
+            title: 'First Training Center',
+            description: 'Opened our first vocational training center in Islamabad.'
+          },
+          {
+            year: '2020',
+            title: 'COVID-19 Response',
+            description: 'Launched emergency support programs for affected communities.'
+          },
+          {
+            year: '2021',
+            title: 'Expansion',
+            description: 'Extended operations to 5 new districts across Pakistan.'
+          },
+          {
+            year: '2022',
+            title: 'Major Milestone',
+            description: 'Reached 10,000+ beneficiaries across all programs.'
+          },
+          {
+            year: '2023',
+            title: 'Innovation',
+            description: 'Introduced digital skills training programs.'
+          }
+        ].map((milestone, index) => (
+          <div class={`relative group ${index % 2 === 0 ? 'md:ml-auto md:pl-16' : 'md:mr-auto md:pr-16'} md:w-1/2`}>
+            
+            <!-- Milestone Card -->
+            <div class="relative bg-white shadow-xl rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <!-- Year Badge -->
+              <div class={`absolute top-6 w-16 h-16 bg-[#2563EB] text-white text-xl font-bold flex items-center justify-center rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 
+                ${index % 2 === 0 ? 'md:-left-20' : 'md:-right-20'}`}>
+                {milestone.year}
+              </div>
+              
+              <!-- Card Content -->
+              <h3 class="font-poppins font-semibold text-2xl text-[#1F2937] mb-2">{milestone.title}</h3>
+              <p class="text-gray-600 leading-relaxed text-lg">{milestone.description}</p>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Team Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-poppins font-bold text-center mb-12">Our Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            name: 'Muhammad Faizan Bin Asif',
+            role: 'Founder & CEO',
+            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
+            bio: 'Social entrepreneur with 15+ years of experience in community development.'
+          },
+          {
+            name: 'Masood Akhtar',
+            role: 'Director of Programs',
+            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
+            bio: 'Expert in sustainable development and program management.'
+          },
+          {
+            name: 'Mufti Usman Haider',
+            role: 'Head of Operations',
+            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
+            bio: 'Specializes in organizational development and strategic planning.'
+          }
+        ].map((member) => (
+          <div class="group">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition group-hover:scale-105">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="font-poppins font-bold text-xl mb-2">{member.name}</h3>
+                <p class="text-primary font-semibold mb-4">{member.role}</p>
+                <p class="text-gray-600">{member.bio}</p>
+                <div class="mt-4 flex space-x-4">
+                  <a href="#" class="text-primary hover:text-primary-dark">
+                    <span class="sr-only">LinkedIn</span>
+                    💼
+                  </a>
+                  <a href="#" class="text-primary hover:text-primary-dark">
+                    <span class="sr-only">Twitter</span>
+                    🐦
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-poppins font-bold text-center mb-12">Our Values</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          {
+            icon: '🤝',
+            title: 'Integrity',
+            description: 'We maintain the highest standards of transparency and accountability.'
+          },
+          {
+            icon: '💪',
+            title: 'Empowerment',
+            description: 'We believe in enabling individuals to achieve self-reliance.'
+          },
+          {
+            icon: '🌱',
+            title: 'Sustainability',
+            description: 'Our solutions focus on long-term impact and growth.'
+          },
+          {
+            icon: '❤️',
+            title: 'Compassion',
+            description: 'We serve with empathy and understanding for all.'
+          }
+        ].map((value) => (
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white text-2xl">{value.icon}</span>
+            </div>
+            <h3 class="font-poppins font-bold text-xl mb-2">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
